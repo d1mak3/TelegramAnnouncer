@@ -1,0 +1,14 @@
+# env
+env/*
+
+# messages
+messages/*
+
+# sessions
+*.session
+
+# venv
+venv/
+
+# dev
+dev/
