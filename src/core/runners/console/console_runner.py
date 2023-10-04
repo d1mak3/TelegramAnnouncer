@@ -101,6 +101,9 @@ class ConsoleRunner:
 
     @staticmethod
     def get_config(config_path, should_be_configured, get_configuration_func):
+        if not os.path.exists("./env"):
+            os.mkdir("./env")
+
         if not os.path.exists(config_path) or should_be_configured():
             with open(config_path, "w") as config:
                 config.write(yaml.dump(get_configuration_func()))
