@@ -23,9 +23,9 @@ class ConsoleMenu:
 
     @staticmethod
     def select_message_input_type():
-        print('''Выберите способ задания сообщения:
-1. Через консоль
-2. Через файл''')
+        print("Выберите способ задания сообщения:\n"
+              "1. Через консоль\n"
+              "2. Через файл")
 
         option = int(input("Введите номер: "))
 
@@ -80,9 +80,28 @@ class ConsoleMenu:
 
     @staticmethod
     def get_telegram_configuration():
-        print("Введите данные с my.telegram.org")
+        print("Введите данные с https://my.telegram.org")
         return {"phone": input("Введите номер телефона: "), "api_id": input("Введите api_id: "),
                 "api_hash": input("Введите api_hash: ")}
+
+    def should_users_be_saved(self):
+        option = input("Нужно ли сохранить пользователей?(Д/н): ")
+        return self.choose_yes_or_no(option)
+
+    def should_database_be_configured(self):
+        option = input("Нужно ли конфигурировать базу данных?(Д/н): ")
+        return self.choose_yes_or_no(option)
+
+    @staticmethod
+    def get_database_configuration():
+        return {"credentials_path": input("Введите путь до файла, полученного по гайду с "
+                "https://dvsemenov.ru/google-tablicy-i-python-podrobnoe-rukovodstvo-s-primerami: "),
+                "link": input("Введите ссылку на таблицу: "),
+                "sheet_title": input("Введите имя листа: ")}
+
+    def should_users_be_parsed(self):
+        option = input("Нужно ли собирать данные из телеграма?(Д/н): ")
+        return self.choose_yes_or_no(option)
 
     def choose_yes_or_no(self, option):
         try:
