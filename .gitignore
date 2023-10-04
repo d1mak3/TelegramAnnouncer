@@ -12,3 +12,6 @@ venv/
 
 # dev
 dev/
+
+# pycache
+*/__pycache__/*
