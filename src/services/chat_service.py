@@ -1,11 +1,11 @@
 class ChatService:
     def __init__(self, telegram_client):
-        self.tg_client = telegram_client
+        self.telegram_client = telegram_client
 
     async def get_all_groups(self):
         groups = []
 
-        async for dialog in self.tg_client.iter_dialogs():
+        async for dialog in self.telegram_client.iter_dialogs():
             if dialog.is_group and dialog not in groups:
                 groups.append(dialog)
 
@@ -14,7 +14,7 @@ class ChatService:
     async def get_all_channels(self):
         channels = []
 
-        async for dialog in self.tg_client.iter_dialogs():
+        async for dialog in self.telegram_client.iter_dialogs():
             if dialog.is_channel and dialog not in channels:
                 channels.append(dialog)
 
