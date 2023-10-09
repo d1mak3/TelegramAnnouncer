@@ -10,5 +10,8 @@ messages/*
 # venv
 venv/
 
-# build
-build/
+# dev
+dev/
+
+# pycache
+*/__pycache__/*
