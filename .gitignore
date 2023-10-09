@@ -10,5 +10,5 @@ messages/*
 # venv
 venv/
 
-# dev
-dev/
+# build
+build/
