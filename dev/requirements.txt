@@ -1,0 +1,4 @@
+gspread==5.11.3
+PyYAML==6.0.1
+Telethon==1.30.3
+
