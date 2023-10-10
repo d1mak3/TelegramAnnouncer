@@ -7,7 +7,6 @@ def safe_create_dir(path):
         os.mkdir(path)
 
 
-shutil.rmtree("venv/")
 shutil.rmtree(".github/")
 shutil.rmtree(".git/")
 shutil.rmtree(".idea/")
