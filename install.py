@@ -13,6 +13,9 @@ shutil.rmtree(".idea/")
 os.remove(".gitignore")
 os.remove(".gitkeep")
 
+if os.path.exists("venv"):
+    shutil.rmtree("venv")
+
 os.system("python3 -m pip install --upgrade pip")
 os.system("pip install -r dev/requirements.txt")
 os.system('python3 dev/utils/build.py "$(pwd)/src/"')
