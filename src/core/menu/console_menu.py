@@ -1,9 +1,11 @@
 from src.core.enums.message_input_type import MessageInputType
+from tqdm import tqdm
 
 
 class ConsoleMenu:
     def __init__(self):
         self.yes_no_choice = {"д": True, "н": False, "y": True, "n": False}
+        self.progress_bar = None
 
     @staticmethod
     def select_chats(chats: []):
@@ -102,6 +104,10 @@ class ConsoleMenu:
     def should_users_be_parsed(self):
         option = input("Нужно ли собирать данные из телеграма?(Д/н): ")
         return self.choose_yes_or_no(option)
+
+    @staticmethod
+    def print_notifications(word: str):
+        print(word, end="")
 
     def choose_yes_or_no(self, option):
         try:

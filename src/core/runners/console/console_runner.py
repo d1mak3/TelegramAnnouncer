@@ -74,7 +74,11 @@ class ConsoleRunner:
 
         # begin announce
         prepared_users = await telethon_client.user.prepare_users(users)
-        await telethon_client.message.send_message(message, prepared_users, receivers_per_iteration, delay)
+        self.menu.print_notifications(word="Отправка сообщений")
+        telethon_client.notification.set_bar(prepared_users)
+        await telethon_client.message.send_message(message, prepared_users, receivers_per_iteration, delay,
+                                                   telethon_client.notification.iterate)
+        telethon_client.notification.finish()
 
         # notify we are done
         self.menu.print_done()

@@ -1,5 +1,5 @@
 # env
-env/*
+env/
 
 # messages
 messages/*
@@ -14,4 +14,4 @@ venv/
 dev/
 
 # pycache
-*/__pycache__/*
+**/__pycache__/**
